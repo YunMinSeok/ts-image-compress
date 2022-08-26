@@ -1,0 +1,37 @@
+{
+  "name": "ts-image-compress",
+  "version": "0.0.1",
+  "description": "A tiny library for handling dark mode on browsers.",
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:YunMinSeok/ts-image-compress.git"
+  },
+  "keywords": [
+    "node",
+    "dark",
+    "mode",
+    "theme",
+    "typescript"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "git+git@github.com:YunMinSeok/ts-image-compress.git/issues"
+  },
+  "homepage": "git+git@github.com:YunMinSeok/ts-image-compress.git#readme",
+  "main": "dist/darkmode.js",
+  "contributors": [
+    "yunminseok"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "mocha --reporter spec",
+    "prepare": "rm -rf dist && tsc"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "cypress": "^9.6.1",
+    "typescript": "^4.6.4"
+  }
+}
