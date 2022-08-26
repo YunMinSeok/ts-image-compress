@@ -18,14 +18,13 @@
     "url": "git+git@github.com:YunMinSeok/ts-image-compress.git/issues"
   },
   "homepage": "git+git@github.com:YunMinSeok/ts-image-compress.git#readme",
-  "main": "dist/darkmode.js",
+  "main": "dist/imageCompress.js",
   "contributors": [
     "yunminseok"
   ],
   "scripts": {
-    "build": "tsc",
-    "test": "mocha --reporter spec",
-    "prepare": "rm -rf dist && tsc"
+    "build": "rm -rf dist && tsc",
+    "test": "mocha --reporter spec"
   },
   "publishConfig": {
     "access": "public"
