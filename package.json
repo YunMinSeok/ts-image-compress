@@ -7,10 +7,9 @@
     "url": "git+git@github.com:YunMinSeok/ts-image-compress.git"
   },
   "keywords": [
-    "node",
-    "dark",
-    "mode",
-    "theme",
+    "image",
+    "imageCompress",
+    "resize",
     "typescript"
   ],
   "license": "MIT",
@@ -23,8 +22,8 @@
     "yunminseok"
   ],
   "scripts": {
-    "build": "rm -rf dist && tsc",
-    "test": "mocha --reporter spec"
+    "start": "react-scripts start",
+    "build": "rm -rf dist && tsc"
   },
   "publishConfig": {
     "access": "public"
