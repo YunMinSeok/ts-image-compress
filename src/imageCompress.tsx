@@ -25,7 +25,10 @@ const imageCompress = async (imageFile: File) => {
   });
 };
 
-const calcTargetSize = (width: number, height: number) => {
+const calcTargetSize = (
+  width: number,
+  height: number
+): { width: number; height: number } => {
   if (width > 4000 || height > 4000) {
     return calcTargetSize(width / 10, height / 10);
   } else if (width > 800 || height > 800) {
