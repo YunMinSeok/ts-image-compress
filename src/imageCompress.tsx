@@ -1,8 +1,12 @@
-const imageCompress = async (imageFile: File) => {
+interface fileType {
+  imgFile: File | Array<File>;
+}
+
+const imageCompress = async (imageFile: fileType) => {
   const customQuality = 0.8;
 
   const image = document.createElement("img");
-  return await new Promise(async (resolve) => {
+  const resizeImage = await new Promise(async (resolve) => {
     image.src = URL.createObjectURL(imageFile);
     image.onload = async () => {
       await URL.revokeObjectURL(image.src);
@@ -23,6 +27,7 @@ const imageCompress = async (imageFile: File) => {
       );
     };
   });
+  return resizeImage;
 };
 
 const calcTargetSize = (
