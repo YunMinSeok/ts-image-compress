@@ -7,25 +7,29 @@ const imageCompress = async (imageFile: fileType) => {
 
   const image = document.createElement("img");
   const resizeImage = await new Promise(async (resolve) => {
-    image.src = URL.createObjectURL(imageFile);
-    image.onload = async () => {
-      await URL.revokeObjectURL(image.src);
-      const canvas = document.createElement("canvas");
-      const { width, height } = calcTargetSize(image.width, image.height);
-      canvas.width = width;
-      canvas.height = height;
-      const context = canvas.getContext("2d");
-      context?.drawImage(image, 0, 0, width, height);
-      context?.canvas.toBlob(
-        (newImageBlob) => {
-          if (newImageBlob) {
-            resolve(new File([newImageBlob], imageFile.name));
-          }
-        },
-        imageFile.type,
-        customQuality
-      );
-    };
+    console.log(imageFile);
+    for (let cnt = 0; cnt < imageFile.imgFile.slice.length; cnt++) {
+      const file = imageFile[cnt];
+      image.src = URL.createObjectURL(file);
+      image.onload = async () => {
+        await URL.revokeObjectURL(image.src);
+        const canvas = document.createElement("canvas");
+        const { width, height } = calcTargetSize(image.width, image.height);
+        canvas.width = width;
+        canvas.height = height;
+        const context = canvas.getContext("2d");
+        context?.drawImage(image, 0, 0, width, height);
+        context?.canvas.toBlob(
+          (newImageBlob) => {
+            if (newImageBlob) {
+              resolve(new File([newImageBlob], file.name));
+            }
+          },
+          file.type,
+          customQuality
+        );
+      };
+    }
   });
   return resizeImage;
 };
