@@ -1,5 +1,5 @@
 interface fileType {
-  imgFile: File | Array<File>;
+  imgFile: File | FileList;
 }
 
 const imageCompress = async (imageFile: fileType) => {
@@ -8,7 +8,7 @@ const imageCompress = async (imageFile: fileType) => {
   const image = document.createElement("img");
   const resizeImage = await new Promise(async (resolve) => {
     console.log(imageFile);
-    for (let cnt = 0; cnt < imageFile.imgFile.slice.length; cnt++) {
+    for (let cnt = 0; cnt < imageFile.imgFile.length; cnt++) {
       const file = imageFile[cnt];
       image.src = URL.createObjectURL(file);
       image.onload = async () => {
