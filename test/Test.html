@@ -12,19 +12,27 @@
       <div class="SectionWrap">
         <h2>Image compression example</h2>
         <div class="ContentSection">
-          <input type="file" accept=".jpeg, .jpg, .png, .gif" />
+          <input type="file" id="imageInput" accept=".jpeg, .jpg, .png, .gif" />
           <div class="ImageSection">
             <h4>Origin Image</h4>
-            <div class="Image"></div>
+            <div class="Image"><img src="" id="originImage" /></div>
           </div>
           <div class="ImageSection">
             <h4>Compress Image</h4>
-            <div class="Image"></div>
+            <div class="Image"><img src="" /></div>
           </div>
         </div>
       </div>
     </div>
   </body>
-</html>
+  <script type="text/javascript">
+    let imageInput = document.getElementById("imageInput");
 
-<script></script>
+    imageInput.addEventListener("change", function (e) {
+      console.log(e.target.files[0]);
+      document.getElementById("originImage").src = URL.createObjectURL(
+        e.target.files[0]
+      );
+    });
+  </script>
+</html>
