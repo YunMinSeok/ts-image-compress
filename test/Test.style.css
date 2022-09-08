@@ -1,0 +1,9 @@
+.Container {
+  width: 100%;
+}
+
+.SectionWrap {
+  display: flex;
+  align-items: center;
+  padding: 50px;
+}
