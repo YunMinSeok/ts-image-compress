@@ -19,9 +19,21 @@
               <img src="" id="originImage" alt="OriginImage" />
             </div>
           </div>
+
+          <div>
+            <input
+              type="button"
+              alt="resizeButton"
+              value="Resize?"
+              id="resizeButton"
+            />
+          </div>
+
           <div class="ImageSection">
             <h4>Compress Image</h4>
-            <div class="Image"><img src="" /></div>
+            <div class="Image">
+              <img src="" id="resizeImage" alt="ResizeImage" />
+            </div>
           </div>
         </div>
       </div>
@@ -29,10 +41,20 @@
   </body>
   <script type="text/javascript">
     let imageInput = document.getElementById("imageInput");
+    let originfile = null;
 
     imageInput.addEventListener("change", function (e) {
       const originImage = document.getElementById("originImage");
+      originfile = e.target.files[0];
       originImage.src = URL.createObjectURL(e.target.files[0]);
+    });
+
+    let resizeInput = document.getElementById("resizeButton");
+    resizeInput.addEventListener("click", function (e) {
+      if (originfile === null) {
+        alert("Please check origin image");
+      }
+      console.log(originfile);
     });
   </script>
 </html>

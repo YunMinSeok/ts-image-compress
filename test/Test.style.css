@@ -29,3 +29,8 @@
   overflow: hidden;
   object-fit: cover;
 }
+
+#resizeButton {
+  width: 100px;
+  height: 30px;
+}
