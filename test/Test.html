@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image Compress Test Page</title>
     <link href="./Test.style.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script type="module" src="../src/index.ts"></script>
   </head>
   <body>
     <div class="Container">
@@ -54,7 +56,8 @@
       if (originfile === null) {
         alert("Please check origin image");
       }
-      console.log(originfile);
+
+      let resizeFile = ImageCompress(originfile);
     });
   </script>
 </html>
