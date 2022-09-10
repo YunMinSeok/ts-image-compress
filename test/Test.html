@@ -52,12 +52,12 @@
     });
 
     let resizeInput = document.getElementById("resizeButton");
-    resizeInput.addEventListener("click", function (e) {
+    resizeInput.addEventListener("click", async function (e) {
       if (originfile === null) {
         alert("Please check origin image");
       }
 
-      let resizeFile = ImageCompress(originfile);
+      let resizeFile = await ImageCompress(originfile);
     });
   </script>
 </html>
