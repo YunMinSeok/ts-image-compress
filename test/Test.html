@@ -15,7 +15,9 @@
           <input type="file" id="imageInput" accept=".jpeg, .jpg, .png, .gif" />
           <div class="ImageSection">
             <h4>Origin Image</h4>
-            <div class="Image"><img src="" id="originImage" /></div>
+            <div class="Image">
+              <img src="" id="originImage" alt="OriginImage" />
+            </div>
           </div>
           <div class="ImageSection">
             <h4>Compress Image</h4>
@@ -29,10 +31,8 @@
     let imageInput = document.getElementById("imageInput");
 
     imageInput.addEventListener("change", function (e) {
-      console.log(e.target.files[0]);
-      document.getElementById("originImage").src = URL.createObjectURL(
-        e.target.files[0]
-      );
+      const originImage = document.getElementById("originImage");
+      originImage.src = URL.createObjectURL(e.target.files[0]);
     });
   </script>
 </html>
