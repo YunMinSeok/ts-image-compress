@@ -1,6 +1,6 @@
 {
   "name": "ts-image-compress",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A tiny library for handling dark mode on browsers.",
   "repository": {
     "type": "git",
