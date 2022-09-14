@@ -39,28 +39,28 @@
         </div>
       </div>
     </div>
+    <script type="module">
+      import ImageCompress from "../dist/index.js";
+      console.log(ImageCompress);
+    </script>
+    <script type="text/javascript">
+      let imageInput = document.getElementById("imageInput");
+      let originfile = null;
+
+      imageInput.addEventListener("change", function (e) {
+        const originImage = document.getElementById("originImage");
+        originfile = e.target.files[0];
+        originImage.src = URL.createObjectURL(e.target.files[0]);
+      });
+
+      let resizeInput = document.getElementById("resizeButton");
+      resizeInput.addEventListener("click", async function (e) {
+        if (originfile === null) {
+          alert("Please check origin image");
+        }
+
+        let resizeFile = await ImageCompress(originfile);
+      });
+    </script>
   </body>
-  <script type="module">
-    import ImageCompress from "../src/index.ts";
-    console.log(ImageCompress);
-  </script>
-  <script type="text/javascript">
-    let imageInput = document.getElementById("imageInput");
-    let originfile = null;
-
-    imageInput.addEventListener("change", function (e) {
-      const originImage = document.getElementById("originImage");
-      originfile = e.target.files[0];
-      originImage.src = URL.createObjectURL(e.target.files[0]);
-    });
-
-    let resizeInput = document.getElementById("resizeButton");
-    resizeInput.addEventListener("click", async function (e) {
-      if (originfile === null) {
-        alert("Please check origin image");
-      }
-
-      let resizeFile = await ImageCompress(originfile);
-    });
-  </script>
 </html>
