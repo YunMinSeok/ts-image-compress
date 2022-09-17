@@ -16,6 +16,7 @@
           <input type="file" id="imageInput" accept=".jpeg, .jpg, .png, .gif" />
           <div class="ImageSection">
             <h4>Origin Image</h4>
+            <h4>Origin Image Size: <span id="originImageSize"></span></h4>
             <div class="Image">
               <img src="" id="originImage" alt="OriginImage" />
             </div>
@@ -32,6 +33,7 @@
 
           <div class="ImageSection">
             <h4>Compress Image</h4>
+            <h4>Resize Image Size: <span id="resizeImageSize"></span></h4>
             <div class="Image">
               <img src="" id="resizeImage" alt="ResizeImage" />
             </div>
@@ -48,9 +50,11 @@
       let originfile = null;
 
       imageInput.addEventListener("change", function (e) {
-        const originImage = document.getElementById("originImage");
         originfile = e.target.files[0];
-        originImage.src = URL.createObjectURL(e.target.files[0]);
+        document.getElementById("originImage").src = URL.createObjectURL(
+          e.target.files[0]
+        );
+        document.getElementById("originImageSize").innerText = originfile.size;
       });
 
       let resizeInput = document.getElementById("resizeButton");
@@ -66,6 +70,8 @@
           }
           const resizeImage = document.getElementById("resizeImage");
           resizeImage.src = URL.createObjectURL(resizeFile);
+          document.getElementById("resizeImageSize").innerText =
+            resizeFile.size;
         } catch (e) {
           console.error(e);
         }

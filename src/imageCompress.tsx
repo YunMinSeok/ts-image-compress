@@ -1,7 +1,3 @@
-// interface fileType {
-//   imgFile: File;
-// }
-
 const imageCompress = async (imageFile: File) => {
   const customQuality = 0.8;
 
