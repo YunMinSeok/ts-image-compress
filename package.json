@@ -1,6 +1,6 @@
 {
   "name": "ts-image-compress",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A tiny library for handling image size.",
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
     "url": "git+git@github.com:YunMinSeok/ts-image-compress.git/issues"
   },
   "homepage": "git+git@github.com:YunMinSeok/ts-image-compress.git#readme",
-  "main": "dist/index.js",
+  "main": "dist/imageCompress.js",
   "contributors": [
     "yunminseok"
   ],

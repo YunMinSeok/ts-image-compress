@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const imageCompress = (imageFile) => __awaiter(void 0, void 0, void 0, function* () {
+const ImageCompress = (imageFile) => __awaiter(void 0, void 0, void 0, function* () {
     const customQuality = 0.8;
     const image = document.createElement("img");
     const resizeImage = yield new Promise((resolve) => __awaiter(void 0, void 0, void 0, function* () {
@@ -40,4 +40,4 @@ const calcTargetSize = (width, height) => {
     }
     return { width: width, height: height };
 };
-exports.default = imageCompress;
+exports.default = ImageCompress;

@@ -63,7 +63,7 @@
           if (originfile === null) {
             alert("Please check origin image");
           }
-          let resizeFile = await imageCompress(originfile);
+          let resizeFile = await ImageCompress(originfile);
 
           if (!resizeFile) {
             return;

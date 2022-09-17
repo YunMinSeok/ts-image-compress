@@ -1,2 +1,2 @@
-declare const imageCompress: (imageFile: File) => Promise<unknown>;
-export default imageCompress;
+declare const ImageCompress: (imageFile: File) => Promise<unknown>;
+export default ImageCompress;

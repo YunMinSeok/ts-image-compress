@@ -1,4 +1,4 @@
-const imageCompress = async (imageFile: File) => {
+const ImageCompress = async (imageFile: File) => {
   const customQuality = 0.8;
 
   const image = document.createElement("img");
@@ -38,4 +38,4 @@ const calcTargetSize = (
   return { width: width, height: height };
 };
 
-export default imageCompress;
+export default ImageCompress;
