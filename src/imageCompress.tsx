@@ -1,13 +1,13 @@
-interface fileType {
-  imgFile: File;
-}
+// interface fileType {
+//   imgFile: File;
+// }
 
-const imageCompress = async (imageFile: fileType) => {
+const imageCompress = async (imageFile: File) => {
   const customQuality = 0.8;
 
   const image = document.createElement("img");
   const resizeImage = await new Promise(async (resolve) => {
-    image.src = URL.createObjectURL(imageFile.imgFile);
+    image.src = URL.createObjectURL(imageFile);
     image.onload = async () => {
       await URL.revokeObjectURL(image.src);
       const canvas = document.createElement("canvas");
@@ -19,10 +19,10 @@ const imageCompress = async (imageFile: fileType) => {
       context?.canvas.toBlob(
         (newImageBlob) => {
           if (newImageBlob) {
-            resolve(new File([newImageBlob], imageFile.imgFile.name));
+            resolve(new File([newImageBlob], imageFile.name));
           }
         },
-        imageFile.imgFile.type,
+        imageFile.type,
         customQuality
       );
     };

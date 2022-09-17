@@ -60,6 +60,12 @@
             alert("Please check origin image");
           }
           let resizeFile = await imageCompress(originfile);
+
+          if (!resizeFile) {
+            return;
+          }
+          const resizeImage = document.getElementById("resizeImage");
+          resizeImage.src = URL.createObjectURL(resizeFile);
         } catch (e) {
           console.error(e);
         }
