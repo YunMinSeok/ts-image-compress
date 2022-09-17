@@ -42,10 +42,8 @@
     <script>
       var exports = {};
     </script>
-    <script type="module">
-      import ImageCompress from "../dist/index.js";
-    </script>
-    <script type="text/javascript">
+    <script src="../dist/imageCompress.js"></script>
+    <script>
       let imageInput = document.getElementById("imageInput");
       let originfile = null;
 
@@ -57,11 +55,14 @@
 
       let resizeInput = document.getElementById("resizeButton");
       resizeInput.addEventListener("click", async function (e) {
-        if (originfile === null) {
-          alert("Please check origin image");
+        try {
+          if (originfile === null) {
+            alert("Please check origin image");
+          }
+          let resizeFile = await imageCompress(originfile);
+        } catch (e) {
+          console.error(e);
         }
-
-        let resizeFile = await ImageCompress(originfile);
       });
     </script>
   </body>
