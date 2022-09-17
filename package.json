@@ -6,6 +6,7 @@
     "type": "git",
     "url": "git+git@github.com:YunMinSeok/ts-image-compress.git"
   },
+  "type": "module",
   "keywords": [
     "image",
     "imageCompress",

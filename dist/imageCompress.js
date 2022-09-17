@@ -12,8 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const imageCompress = (imageFile) => __awaiter(void 0, void 0, void 0, function* () {
     const customQuality = 0.8;
     const image = document.createElement("img");
-    return yield new Promise((resolve) => __awaiter(void 0, void 0, void 0, function* () {
-        image.src = URL.createObjectURL(imageFile);
+    const resizeImage = yield new Promise((resolve) => __awaiter(void 0, void 0, void 0, function* () {
+        image.src = URL.createObjectURL(imageFile.imgFile);
         image.onload = () => __awaiter(void 0, void 0, void 0, function* () {
             yield URL.revokeObjectURL(image.src);
             const canvas = document.createElement("canvas");
@@ -24,11 +24,12 @@ const imageCompress = (imageFile) => __awaiter(void 0, void 0, void 0, function*
             context === null || context === void 0 ? void 0 : context.drawImage(image, 0, 0, width, height);
             context === null || context === void 0 ? void 0 : context.canvas.toBlob((newImageBlob) => {
                 if (newImageBlob) {
-                    resolve(new File([newImageBlob], imageFile.name));
+                    resolve(new File([newImageBlob], imageFile.imgFile.name));
                 }
-            }, imageFile.type, customQuality);
+            }, imageFile.imgFile.type, customQuality);
         });
     }));
+    return resizeImage;
 });
 const calcTargetSize = (width, height) => {
     if (width > 4000 || height > 4000) {

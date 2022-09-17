@@ -1,2 +1,5 @@
-declare const imageCompress: (imageFile: File) => Promise<unknown>;
+interface fileType {
+    imgFile: File;
+}
+declare const imageCompress: (imageFile: fileType) => Promise<unknown>;
 export default imageCompress;
