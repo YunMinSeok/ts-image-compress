@@ -18,7 +18,7 @@
     "url": "git+git@github.com:YunMinSeok/ts-image-compress.git/issues"
   },
   "homepage": "git+git@github.com:YunMinSeok/ts-image-compress.git#readme",
-  "main": "dist/imageCompress.js",
+  "main": "dist/index.js",
   "contributors": [
     "yunminseok"
   ],
