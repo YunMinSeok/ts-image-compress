@@ -1,0 +1,1 @@
+export { ImageCompress } from "./imageCompress";

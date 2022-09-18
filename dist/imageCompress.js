@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ImageCompress = void 0;
 const ImageCompress = (imageFile) => __awaiter(void 0, void 0, void 0, function* () {
     const customQuality = 0.8;
     const image = document.createElement("img");
@@ -31,6 +32,7 @@ const ImageCompress = (imageFile) => __awaiter(void 0, void 0, void 0, function*
     }));
     return resizeImage;
 });
+exports.ImageCompress = ImageCompress;
 const calcTargetSize = (width, height) => {
     if (width > 4000 || height > 4000) {
         return calcTargetSize(width / 10, height / 10);
@@ -40,4 +42,3 @@ const calcTargetSize = (width, height) => {
     }
     return { width: width, height: height };
 };
-exports.default = ImageCompress;

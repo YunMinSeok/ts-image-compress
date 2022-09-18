@@ -1,12 +1,11 @@
 {
   "name": "ts-image-compress",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A tiny library for handling image size.",
   "repository": {
     "type": "git",
     "url": "git+git@github.com:YunMinSeok/ts-image-compress.git"
   },
-  "type": "module",
   "keywords": [
     "image",
     "imageCompress",
